@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">壹佰教育试题录入</string>
+    <string name="only_for_admin">仅供内部人员使用</string>
+    <string name="activity_init_data_title">初始化数据</string>
+  
+    <string name="kuaijijichu">会计基础</string>
+    <string name="caijingfagui">财经法规</string>
+    <string name="kuaijidiansuanhua">会计电算化</string>
+    <string name="sku_congye">会计从业资格</string>
+    <string name="db_name">yibai-db</string>
+    <string name="is_loading">正在加载</string>
+    
+</resources>
