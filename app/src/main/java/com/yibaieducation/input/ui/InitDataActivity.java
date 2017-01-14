@@ -12,7 +12,7 @@ import com.orhanobut.logger.Logger;
 import com.yibaieducation.bean.Ti_item_config;
 import com.yibaieducation.bean.Ti_sku_subject;
 import com.yibaieducation.dao.Ti_sku_subjectDao;
-import com.yibaieducation.input.BaseActivity;
+import com.yibaieducation.input.base.BaseActivity;
 import com.yibaieducation.input.R;
 import com.yibaieducation.input.bean.ItemConfigBean;
 import com.yibaieducation.input.getService.GetSubjectService;
@@ -306,13 +306,12 @@ public class InitDataActivity extends BaseActivity implements View.OnClickListen
                     }
                 });
 
-
     }
 
 
     //进行网络请求
     private void getSubs() {
-        String baseUrl = "http://192.168.0.108/study/szhua/getJson.php/";
+        String baseUrl = "http://192.168.191.1/study/szhua/getJson.php/";
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)

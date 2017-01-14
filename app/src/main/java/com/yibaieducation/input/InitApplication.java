@@ -30,7 +30,6 @@ public class InitApplication extends Application {
         SQLiteOnWeb.init(this).start();
     }
 
-
     @NonNull
     public  DaoSession getDaoSession(){
        return  daoSession ;

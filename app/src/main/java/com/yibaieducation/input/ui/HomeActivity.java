@@ -1,6 +1,7 @@
 package com.yibaieducation.input.ui;
 
 import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.yibaieducation.bean.Ti_sku_subject;
 import com.yibaieducation.dao.Ti_sku_subjectDao;
 import com.yibaieducation.input.R;
+import com.yibaieducation.input.ui.fragment.HomeListFragment;
 
 import java.util.ArrayList;
 
@@ -29,13 +31,11 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         initToolBar();
 
-
-
+        getSupportFragmentManager().beginTransaction().add(R.id.container,new HomeListFragment()).commit();
 
 
 
     }
-
     /*设置标题栏*/
     private void initToolBar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -66,6 +66,9 @@ public class HomeActivity extends AppCompatActivity {
             Intent intent =new Intent(this,InitDataActivity.class) ;
             startActivity(intent);
             return true;
+        }else if (id==R.id.setting1){
+            Intent intent =new Intent(this,ItemConfigActivity.class) ;
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

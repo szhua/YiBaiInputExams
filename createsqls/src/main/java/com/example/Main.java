@@ -79,7 +79,7 @@ public class Main {
         Entity ti_item_config=schema.addEntity("Ti_item_config");
         ti_item_config.addIdProperty() ;
         ti_item_config.addIntProperty("sku_id");
-        ti_item_config.addStringProperty("item_name").unique();
+        ti_item_config.addStringProperty("item_name");
         ti_item_config.addStringProperty("item_code");
         ti_item_config.addStringProperty("parent_id") ;
         ti_item_config.addIntProperty("is_leaf");

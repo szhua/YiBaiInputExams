@@ -49,7 +49,7 @@ public class Ti_item_configDao extends AbstractDao<Ti_item_config, Long> {
         db.execSQL("CREATE TABLE " + constraint + "'TI_ITEM_CONFIG' (" + //
                 "'_id' INTEGER PRIMARY KEY ," + // 0: id
                 "'SKU_ID' INTEGER," + // 1: sku_id
-                "'ITEM_NAME' TEXT UNIQUE ," + // 2: item_name
+                "'ITEM_NAME' TEXT," + // 2: item_name
                 "'ITEM_CODE' TEXT," + // 3: item_code
                 "'PARENT_ID' TEXT," + // 4: parent_id
                 "'IS_LEAF' INTEGER);"); // 5: is_leaf

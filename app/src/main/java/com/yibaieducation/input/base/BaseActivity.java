@@ -1,4 +1,4 @@
-package com.yibaieducation.input;
+package com.yibaieducation.input.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,6 +6,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
 import com.yibaieducation.dao.DaoSession;
+import com.yibaieducation.input.InitApplication;
+import com.yibaieducation.input.R;
 import com.yibaieducation.input.widget.ProgressDialog;
 
 /**

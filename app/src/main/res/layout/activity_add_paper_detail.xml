@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yibaieducation.input.ui.AddPaperDetailActivity">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+       <android.support.v7.widget.CardView
+
+           android:layout_margin="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <EditText
+               android:id="@+id/paper_name"
+               android:minHeight="60dp"
+               android:paddingLeft="10dp"
+               android:paddingRight="10dp"
+               android:paddingBottom="6dp"
+               android:textColorHint="@color/text_color_light"
+               android:hint="输入试卷名称"
+               android:background="@color/white"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+       </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/paper_total_count"
+                android:minHeight="60dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="6dp"
+                android:textColorHint="@color/text_color_light"
+                android:hint="输入试卷试题个数"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/paper_describe"
+                android:minHeight="60dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="6dp"
+                android:textColorHint="@color/text_color_light"
+                android:hint="输入试卷描述"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/paper_time"
+                android:minHeight="60dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="6dp"
+                android:textColorHint="@color/text_color_light"
+                android:hint="输入考试时间"
+                android:inputType="number"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/paper_scores"
+                android:minHeight="60dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="6dp"
+                android:textColorHint="@color/text_color_light"
+                android:hint="输入试卷分数"
+                android:inputType="number"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </android.support.v7.widget.CardView>
+
+
+       <TextView
+           android:id="@+id/commit"
+           android:clickable="true"
+           style="@style/NornmalButton"
+           android:layout_width="@dimen/nor_width"
+           android:text="@string/commit"
+           android:layout_marginTop="30dp"
+           android:layout_height="@dimen/nor_bt_height"></TextView>
+
+
+      </LinearLayout>
+
+</ScrollView>
+
+
+</LinearLayout>
