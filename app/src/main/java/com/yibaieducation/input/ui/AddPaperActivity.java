@@ -1,11 +1,10 @@
 package com.yibaieducation.input.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import com.yibaieducation.input.R;
 import com.yibaieducation.input.base.BaseActivity;
 import com.yibaieducation.input.ui.fragment.AddPaperFragment;
+import com.yibaieducation.input.util.ToastUtil;
 
 public class AddPaperActivity extends BaseActivity {
 
@@ -13,15 +12,9 @@ public class AddPaperActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_paper);
-
-
-        String subjectID =getIntent().getStringExtra("subjectId");
-
+        setTitle("添加试卷");
+        long subjectID =getIntent().getLongExtra("subjectId",0);
+        ToastUtil.showToast(this,"id"+getIntent().getLongExtra("subjectId",0));
         getSupportFragmentManager().beginTransaction().add(R.id.container,AddPaperFragment.newInstance(subjectID)).commit();
-
-
-
-
-
     }
 }

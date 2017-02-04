@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="10dp"
+        android:elevation="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <Button
+               android:id="@+id/add_single_button"
+               android:layout_margin="4dp"
+               android:background="@color/fbutton_color_green_sea"
+               android:layout_width="match_parent"
+               android:text="添加单选题"
+               android:textSize="20sp"
+               android:gravity="center"
+               android:textColor="@color/white"
+               android:layout_height="40dp"/>
+
+
+           <Button
+               android:id="@+id/add_multi_button"
+               android:layout_margin="4dp"
+               android:background="@color/fbutton_color_green_sea"
+               android:layout_width="match_parent"
+               android:text="添加多选题"
+               android:textSize="20sp"
+               android:gravity="center"
+               android:textColor="@color/white"
+               android:layout_height="40dp"/>
+
+           <Button
+               android:id="@+id/add_judge_button"
+               android:layout_margin="4dp"
+               android:background="@color/fbutton_color_green_sea"
+               android:layout_width="match_parent"
+               android:text="添加判断题"
+               android:textSize="20sp"
+               android:gravity="center"
+               android:textColor="@color/white"
+               android:layout_height="40dp"/>
+
+
+       </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

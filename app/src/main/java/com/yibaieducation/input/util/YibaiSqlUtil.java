@@ -1,6 +1,7 @@
 package com.yibaieducation.input.util;
 
 import android.content.Context;
+import android.text.TextUtils;
 
 import com.yibaieducation.input.R;
 
@@ -13,7 +14,10 @@ import com.yibaieducation.input.R;
  */
 public class YibaiSqlUtil {
 
-    public static String getSql ( String orderBy , int page , int perpageCount){
-        return  String.format(" order by %1$s limit %2$s offset %2$s*%3$s",orderBy,perpageCount,page);
+    public static String getSql ( String orderBy , int page , int perpageCount ,String where){
+        if(TextUtils.isEmpty(where)){
+            return  String.format(" order by %1$s limit %2$s offset %2$s*%3$s ",orderBy,perpageCount,page);
+        }
+        return  String.format(where+" order by %1$s limit %2$s offset %2$s*%3$s ",orderBy,perpageCount,page);
     }
 }

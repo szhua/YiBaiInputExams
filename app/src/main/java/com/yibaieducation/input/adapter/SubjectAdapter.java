@@ -34,11 +34,21 @@ public class SubjectAdapter extends BaseAadpter<Ti_sku_subject> {
       }
 
     @Override
-      public void onBindDatas(BaseViewHolder holder, int position) {
+      public void onBindDatas(BaseViewHolder holder, final int position) {
 
         SubjectViewHolder ho = (SubjectViewHolder) holder;
         Ti_sku_subject sku_subject =datas.get(position);
         ho.text.setText(sku_subject.getSubject_name());
+
+        ho.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(v.getContext(), AddPaperActivity.class);
+                intent.putExtra("subjectId",datas.get(position).getId());
+                v.getContext().startActivity(intent);
+            }
+        });
+
 
       }
 
@@ -50,16 +60,7 @@ public class SubjectAdapter extends BaseAadpter<Ti_sku_subject> {
             super(itemView);
             text= (TextView) itemView.findViewById(R.id.title);
             card = (CardView) itemView.findViewById(R.id.card);
-            card.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
-                  //  ToastUtil.showToast(v.getContext(),"ID:"+datas.get(getAdapterPosition()).getId());
-                    Intent intent =new Intent(v.getContext(), AddPaperActivity.class);
-                    intent.putExtra("subjectId",datas.get(getAdapterPosition()).getId());
-                    v.getContext().startActivity(intent);
-                }
-            });
         }
     }
 

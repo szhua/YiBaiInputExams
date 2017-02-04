@@ -19,19 +19,18 @@ public interface GetDataDaoImp<T,X extends AbstractDao> {
     X getDao();
 
 
-
     /*通过单个的tag获得单个的数据*/
-    void  getSingleDataByTag();
-
+    void  getDataByTag(String where ,int requestCode);
 
 
 
     /*获得所有的数据*/
     void getAllData(int requestCode);
 
+
     /*获得每页的数据*/
     /*@retrun isHasMore*/
-    void getDataFromPage(int page , int requestCode);
+    void getDataFromPage(int page , int requestCode ,String where);
 
 
 
@@ -49,18 +48,22 @@ public interface GetDataDaoImp<T,X extends AbstractDao> {
     void setDaoSession(DaoSession daoSession);
 
 
-
-
     /*请求成功后的处理*/
-    void requestResult(int requestCode ,List<T> data );
+    void requestResult(int requestCode ,Object data );
 
 
     /*删除某条记录*/
     void requestDelte(int requestCode ,T t) ;
 
 
+  /*插入List数据*/
+   void requestInsertDatas(int requestCode,List<T> ts);
 
+
+    /*更新*/
     void requestUpdate(int requestCode ,T t);
 
+
+    /*插入单条数据*/
     void requestInsert(final int requestCode ,T t) ;
 }

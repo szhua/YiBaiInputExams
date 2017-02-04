@@ -21,25 +21,24 @@ public class ToastUtil {
 
     private static  Toast toast ;
 
-
-    public static void showToast(Context context ,@NonNull String message){
+    public static void showToast(Context context ,@NonNull Object message){
         if(toast!=null){
             toast.cancel();
         }
         toast =null ;
         toast=new Toast(context) ;
         TextView textView =new TextView(context) ;
-        textView.setText(message);
-        Drawable leftDrawable =ContextCompat.getDrawable(context,R.drawable.toast_ic) ;
-        leftDrawable.setBounds(0,0,leftDrawable.getMinimumWidth(),leftDrawable.getIntrinsicHeight());
-      //  textView.setCompoundDrawablesRelativeWithIntrinsicBounds(ContextCompat.getDrawable(context,R.drawable.toast_ic),null,null,null);
-        textView.setCompoundDrawables(leftDrawable,null,null,null);
+        textView.setText(String.valueOf(message));
+     //   Drawable leftDrawable =ContextCompat.getDrawable(context,R.drawable.toast_ic) ;
+     //   leftDrawable.setBounds(0,0,leftDrawable.getMinimumWidth(),leftDrawable.getIntrinsicHeight());
+      // textView.setCompoundDrawablesRelativeWithIntrinsicBounds(ContextCompat.getDrawable(context,R.drawable.toast_ic),null,null,null);
+     //   textView.setCompoundDrawables(leftDrawable,null,null,null);
+        textView.setBackgroundResource(R.drawable.toast_bg);
+        textView.setPadding(16,6,16,6);
         textView.setGravity(Gravity.CENTER);
-        textView.setTextColor(ContextCompat.getColor(context,R.color.text_color_normal));
+        textView.setTextColor(ContextCompat.getColor(context,R.color.white));
         toast.setView(textView);
         toast.show();
     }
-
-
 
 }

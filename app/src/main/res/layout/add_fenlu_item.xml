@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+   <android.support.v7.widget.CardView
+       android:layout_margin="10dp"
+       android:elevation="10dp"
+       app:cardCornerRadius="6dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:gravity="center"
+           android:padding="6dp"
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <RadioGroup
+               android:id="@+id/radios"
+               android:orientation="horizontal"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
+               <RadioButton
+                   android:id="@+id/jie"
+                   android:padding="10dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=" 借 "
+                   />
+               <RadioButton
+                   android:id="@+id/dai"
+                   android:padding="10dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text=" 贷 "
+                   />
+           </RadioGroup>
+
+           <TextView
+               android:id="@+id/selct_account_bt"
+               style="@style/NornmalButton"
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:textSize="12sp"
+               android:layout_marginTop="20dp"
+               android:text="选择科目"
+               />
+
+           <EditText
+               android:id="@+id/inputnumber"
+               android:layout_margin="16dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:minHeight="40dp"
+               android:hint="输入金额"
+               android:padding="4dp"
+               android:textSize="14sp"
+               android:inputType="number"
+               android:background="@drawable/square_shape"
+               />
+       </LinearLayout>
+   </android.support.v7.widget.CardView>
+
+</LinearLayout>

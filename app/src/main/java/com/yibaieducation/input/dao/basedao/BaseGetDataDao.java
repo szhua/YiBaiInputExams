@@ -75,17 +75,53 @@ public abstract class BaseGetDataDao<T,Z extends AbstractDao> implements GetData
         }
       ;
     }
+
     @Override
-    public void getSingleDataByTag() {
+    public void getDataByTag(String where ,final   int requestCode) {
+
+        if(dao==null){
+            Logger.e("You must set up  dao in custructor in first Step !!! ");
+            return;
+        }
+
+      Observable.just(where)
+              .subscribeOn(Schedulers.io())
+              .map(new Func1<String, List<T>>() {
+                  @Override
+                  public List<T> call(String s) {
+                      return  dao.queryRaw(s,new String[]{});
+                  }
+              })
+              .observeOn(AndroidSchedulers.mainThread())
+              .subscribe(new Subscriber<List<T>>() {
+                  @Override
+                  public void onCompleted() {
+
+                  }
+
+                  @Override
+                  public void onError(Throwable e) {
+                      Logger.d(e);
+                      sqlResult.success(requestCode,Config.ERRO_CODE_ERRO,e.toString());
+                  }
+
+                  @Override
+                  public void onNext(List<T> ts) {
+                      requestResult(requestCode,ts);
+                      sqlResult.success(requestCode,Config.ERRO_CODE_SUCCESS,"ok");
+                  }
+              });
+
 
     }
+
     @Override
-    public void  getDataFromPage(int page , final int requestCode) {
+    public void  getDataFromPage(int page , final int requestCode ,String where) {
         if(dao==null){
             Logger.e("You must set up  dao in custructor in first Step !!! ");
             return ;
         }
-        final String sql = YibaiSqlUtil.getSql(dao.getPkColumns()[0],page,perPageNum);
+        final String sql = YibaiSqlUtil.getSql(dao.getPkColumns()[0],page,perPageNum ,where);
         Observable
                 .just(null)
                 .subscribeOn(Schedulers.io())
@@ -201,11 +237,50 @@ public abstract class BaseGetDataDao<T,Z extends AbstractDao> implements GetData
         }
         Observable.just(t)
                 .subscribeOn(Schedulers.io())
-                .map(new Func1<T,Integer>() {
+                .map(new Func1<T,Long>() {
                     @Override
-                    public Integer  call(T t) {
+                    public Long  call(T t) {
+
+                         long id =-1 ;
                         try{
-                            dao.insertOrReplace(t);
+                          id = dao.insertOrReplace(t);
+                        }catch (Exception e){
+
+                        }
+                        return id;
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Long>() {
+                    @Override
+                    public void onCompleted() {
+                    }
+                    @Override
+                    public void onError(Throwable e) {
+                        requestResult(requestCode,new ArrayList<T>());
+                        sqlResult.success(requestCode,Config.ERRO_CODE_ERRO,e.toString());
+                    }
+                    @Override
+                    public void onNext(Long integer) {
+                        requestResult(requestCode,integer);
+                        sqlResult.success(requestCode,Config.ERRO_CODE_SUCCESS,"ok");
+                    }
+                });
+    }
+
+    @Override
+    public void requestInsertDatas( final  int requestCode, List<T> ts) {
+        if(dao==null){
+            Logger.e("You must set up  dao in custructor !!!");
+            return;
+        }
+        Observable.just(ts)
+                .subscribeOn(Schedulers.io())
+                .map(new Func1<List<T>,Integer>() {
+                    @Override
+                    public Integer  call(List<T> ts) {
+                        try{
+                            dao.insertOrReplaceInTx(ts);
                         }catch (Exception e){
                             return  -1 ;
                         }
@@ -228,8 +303,10 @@ public abstract class BaseGetDataDao<T,Z extends AbstractDao> implements GetData
                         sqlResult.success(requestCode,Config.ERRO_CODE_SUCCESS,"ok");
                     }
                 });
-    }
 
+
+
+    }
 
     @Override
     public void requestUpdate(final int requestCode, T t) {
@@ -254,6 +331,7 @@ public abstract class BaseGetDataDao<T,Z extends AbstractDao> implements GetData
                 .subscribe(new Subscriber<Integer>() {
                     @Override
                     public void onCompleted() {
+
                     }
                     @Override
                     public void onError(Throwable e) {

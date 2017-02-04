@@ -39,9 +39,9 @@ public class GetSubjectDao extends BaseGetDataDao<Ti_sku_subject,Ti_sku_subjectD
     }
 
     @Override
-    public void requestResult(int requestCode, List<Ti_sku_subject> data) {
+    public void requestResult(int requestCode, Object data) {
         if(requestCode==Config.REQUEST_CODE_1){
-            subjects = data;
+            subjects = (List<Ti_sku_subject>) data;
         }
     }
 }

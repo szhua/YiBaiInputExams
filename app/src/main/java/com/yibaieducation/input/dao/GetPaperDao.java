@@ -1,4 +1,4 @@
-package com.yibaieducation.input.dao.basedao;
+package com.yibaieducation.input.dao;
 
 import android.support.annotation.NonNull;
 
@@ -6,6 +6,8 @@ import com.yibaieducation.bean.Ti_paper;
 import com.yibaieducation.dao.DaoSession;
 import com.yibaieducation.dao.Ti_paperDao;
 import com.yibaieducation.input.Config;
+import com.yibaieducation.input.dao.basedao.BaseGetDataDao;
+import com.yibaieducation.input.dao.basedao.SqlResult;
 
 import java.util.List;
 
@@ -32,6 +34,24 @@ public class GetPaperDao extends BaseGetDataDao<Ti_paper,Ti_paperDao> {
     }
 
 
+  public void requestSubjectPapers(String id){
+      String where ="where SUBJECT_CODE = "+id ;
+      getDataByTag(where,Config.REQUEST_CODE_2);
+
+  }
+
+  public void deleteTipaper(Ti_paper ti_paper){
+      requestDelte(Config.REQUEST_CODE_3,ti_paper);
+  }
+
+    public void updateTiPaper(Ti_paper ti_paper){
+        requestUpdate(Config.REQUEST_CODE_4,ti_paper);
+    }
+
+
+
+
+
     public void requestAllData(){
         getAllData(Config.REQUEST_CODE_1);
     }
@@ -41,9 +61,11 @@ public class GetPaperDao extends BaseGetDataDao<Ti_paper,Ti_paperDao> {
     }
 
     @Override
-    public void requestResult(int requestCode, List<Ti_paper> data) {
+    public void requestResult(int requestCode, Object data) {
           if(requestCode==Config.REQUEST_CODE_1){
-              ti_papers =data ;
+              ti_papers = (List<Ti_paper>) data;
+          }else if(requestCode==Config.REQUEST_CODE_2){
+              ti_papers = (List<Ti_paper>) data;
           }
     }
 }

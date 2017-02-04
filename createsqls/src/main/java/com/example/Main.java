@@ -53,7 +53,7 @@ public class Main {
         Entity title_parent =schema.addEntity("Ti_title_parent") ;
         title_parent.addIdProperty();
         title_parent.addIntProperty("type_code");
-        title_parent.addStringProperty("des") ;
+        title_parent.addStringProperty("des");
         title_parent.addStringProperty("itemA") ;
         title_parent.addStringProperty("itemB") ;
         title_parent.addStringProperty("itemC");
@@ -99,6 +99,18 @@ PRIMARY KEY ( id )
         ti_sku_subject.addStringProperty("sku_name");
         ti_sku_subject.addIntProperty("subject_code");
         ti_sku_subject.addStringProperty("subject_name").unique();
+
+        Entity ti_account_types =schema.addEntity("Ti_account_types");
+        ti_account_types.addIdProperty();
+        ti_account_types.addStringProperty("type_name").unique();
+
+
+        Entity ti_account_subs =schema.addEntity("Ti_account_subs");
+        ti_account_subs.addIdProperty() ;
+        ti_account_subs.addStringProperty("sub_name").unique();
+        ti_account_subs.addIntProperty("parent_id");
+        ti_account_subs.addStringProperty("parent_name");
+        //ti_account_subs.addStringProperty("ascnid");
 
         DaoGenerator daoGenerator = new DaoGenerator();
         daoGenerator.generateAll(schema, "app/src/main/javagen");

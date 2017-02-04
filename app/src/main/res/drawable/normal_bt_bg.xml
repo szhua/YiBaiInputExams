@@ -7,7 +7,7 @@
          <shape android:innerRadius="4dp" >
 
              <corners
-                 android:radius="6dp"
+                 android:radius="4dp"
                  ></corners>
 
              <solid
@@ -23,7 +23,7 @@
         <shape android:innerRadius="4dp" >
 
             <corners
-                android:radius="6dp"
+                android:radius="4dp"
                 ></corners>
 
             <solid

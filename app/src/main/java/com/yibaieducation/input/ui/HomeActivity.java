@@ -51,7 +51,6 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
-
         return true;
     }
 
@@ -67,12 +66,12 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }else if (id==R.id.setting1){
-            Intent intent =new Intent(this,ItemConfigActivity.class) ;
+            Intent intent =new Intent(this,InputItemActivity.class) ;
+            startActivity(intent);
+        }else if(id==R.id.setting2){
+            Intent intent =new Intent(this,SelectAccountActivity.class) ;
             startActivity(intent);
         }
-
         return super.onOptionsItemSelected(item);
     }
-
-
 }

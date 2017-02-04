@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yibaieducation.input.ui.AddFenluActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+   <LinearLayout
+       android:orientation="vertical"
+       android:gravity="center"
+       android:id="@+id/container"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+   <EditText
+       android:background="@drawable/square_shape"
+       android:layout_margin="16dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:minHeight="80dp"
+       android:id="@+id/desss"
+       android:hint="输入题目描述"
+       android:gravity="left|top"
+       android:padding="4dp"
+       android:textSize="12sp"
+       />
+
+   <EditText
+       android:background="@drawable/square_shape"
+       android:layout_margin="16dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:minHeight="40dp"
+       android:id="@+id/score"
+       android:hint="输入题目分数"
+       android:gravity="left|center_vertical"
+       android:padding="4dp"
+       android:inputType="number"
+       android:textSize="12sp"/>
+
+
+
+
+   </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+
+</LinearLayout>

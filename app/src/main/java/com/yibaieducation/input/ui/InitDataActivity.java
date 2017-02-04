@@ -129,7 +129,6 @@ public class InitDataActivity extends BaseActivity implements View.OnClickListen
                             sub.setSku_name(getString(R.string.sku_congye));
                             sub.setSubject_code(i);
                             sub.setSubject_name(subName);
-
                             subjects.add(sub);
 
                         }

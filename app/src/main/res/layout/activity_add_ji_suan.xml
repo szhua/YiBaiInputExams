@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.yibaieducation.input.ui.AddJiSuanActivity">
+
+    <EditText
+        android:id="@+id/des"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:minHeight="60dp"
+        android:hint="输入问题描述"
+        android:gravity="left|top"
+        android:textSize="14sp"
+        android:textColor="@color/text_color_normal"
+        android:padding="6dp"
+        android:background="@drawable/square_shape"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/item_score"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:minHeight="30dp"
+        android:hint="输入分数"
+        android:inputType="number"
+        android:gravity="left|top"
+        android:textSize="14sp"
+        android:textColor="@color/text_color_normal"
+        android:padding="6dp"
+        android:background="@drawable/square_shape"
+        android:layout_height="wrap_content"/>
+
+
+
+    <EditText
+        android:id="@+id/right_answer"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:minHeight="60dp"
+        android:hint="答案"
+        android:inputType="number"
+        android:gravity="left|top"
+        android:textSize="14sp"
+        android:textColor="@color/text_color_normal"
+        android:padding="6dp"
+        android:background="@drawable/square_shape"
+        android:layout_height="wrap_content"/>
+
+
+
+    <TextView
+        android:id="@+id/commit"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="确定"
+        style="@style/NornmalButton"
+        />
+
+</LinearLayout>
+

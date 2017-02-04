@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_margin="6dp"
+                android:id="@+id/addfenlu"
+                android:text="分录"
+                android:layout_marginBottom="10dp"
+                style="@style/NornmalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_margin="6dp"
+                android:id="@+id/add_select"
+                android:text="选择"
+                android:layout_marginBottom="10dp"
+                style="@style/NornmalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_margin="6dp"
+                android:id="@+id/add_jisuan"
+                android:text="计算"
+                android:layout_marginBottom="10dp"
+                style="@style/NornmalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+
+        </LinearLayout>
+
+       <LinearLayout
+           android:gravity="center_vertical"
+           android:layout_marginTop="16dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:text="材料介绍："
+               android:layout_marginLeft="16dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+
+          <ImageView
+              android:id="@+id/eidt_matrial"
+              android:layout_marginLeft="40dp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:src="@drawable/edit"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp"
+              />
+       </LinearLayout>
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+         <TextView
+             android:id="@+id/des"
+             android:text="案例材料"
+             android:textColor="@color/fbutton_color_belize_hole"
+             android:layout_marginLeft="16dp"
+             android:layout_marginRight="16dp"
+             android:layout_marginBottom="16dp"
+             android:padding="6dp"
+             android:minHeight="60dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"/>
+
+     </RelativeLayout>
+
+
+        <com.yibaieducation.input.widget.NoScrollListView
+            android:id="@+id/listview"
+            android:listSelector="@color/transparent_normal"
+            android:divider="@color/transparent_normal"
+            android:dividerHeight="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></com.yibaieducation.input.widget.NoScrollListView>
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yibaieducation.input.ui.IndefiniteSelectActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/des"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:minHeight="60dp"
+                android:hint="输入问题描述"
+                android:gravity="left|top"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_normal"
+                android:padding="6dp"
+                android:background="@drawable/square_shape"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/item_score"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="30dp"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_normal"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:background="@drawable/square_shape"
+                android:hint="输入分数"
+                android:inputType="number"
+                android:layout_marginBottom="10dp"
+                />
+
+            <EditText
+                android:id="@+id/item_a"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_normal"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:background="@drawable/square_shape"
+                android:hint="输入选项A"
+                android:layout_marginBottom="10dp"
+                />
+
+            <EditText
+                android:id="@+id/item_b"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_normal"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:background="@drawable/square_shape"
+                android:hint="输入选项B"
+                android:layout_marginBottom="10dp"
+                />
+            <EditText
+                android:id="@+id/item_c"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_normal"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:background="@drawable/square_shape"
+                android:hint="输入选项C"
+                android:layout_marginBottom="10dp"
+                />
+            <EditText
+                android:id="@+id/item_d"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:textSize="14sp"
+                android:textColor="@color/text_color_normal"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:background="@drawable/square_shape"
+                android:hint="输入选项D"
+                android:layout_marginBottom="10dp"
+                />
+
+
+       <LinearLayout
+           android:gravity="center"
+           android:layout_marginBottom="16dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <CheckBox
+               android:padding="6dp"
+               android:id="@+id/check_a"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="A"
+               />
+           <CheckBox
+               android:padding="6dp"
+               android:id="@+id/check_b"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="B"
+               />
+           <CheckBox
+               android:padding="6dp"
+               android:id="@+id/check_c"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="C"
+               />
+           <CheckBox
+               android:padding="6dp"
+               android:id="@+id/check_d"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="D"
+               />
+
+
+
+       </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/commit"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="确定"
+                style="@style/NornmalButton"
+                />
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

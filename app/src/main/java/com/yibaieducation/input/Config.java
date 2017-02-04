@@ -20,6 +20,22 @@ public final class Config {
     public static final int REQUEST_CODE_PAGE_DATA=105;
 
 
+    public static final int DELETE_TYPE =109 ;
+    public static final int EDIT_TYPE =110;
+
+
+    public static final int SINGLE_TYPE = 1 ;
+    public static final int MULTI_TYPE =2 ;
+    public static final int JUDGE_TYPE=3 ;
+    public static final int SIMPLE_ANSWER =4;
+    public static final int FENLU_TYPE =5 ;
+    /*不定项选择*/
+    public static final int INDEFINITE_TYPE =6 ;
+
+    /*计算题*/
+    public static final int CALCULATE_TYPE =7 ;
+
+
 
 
 }

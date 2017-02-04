@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.orhanobut.logger.Logger;
 import com.yibaieducation.bean.Ti_paper;
+import com.yibaieducation.input.Config;
 import com.yibaieducation.input.R;
 import com.yibaieducation.input.base.BaseLoadMoreFragment;
 import com.yibaieducation.input.ui.AddPaperDetailActivity;
@@ -36,13 +38,11 @@ public class PaperAdapter extends RecyclerView.Adapter {
     private List<Ti_paper> papers =new ArrayList<>();
 
     public void setPapers(List<Ti_paper> papers) {
-        this.papers = papers;
-
-        if(this.papers==null){
-            this.papers =new ArrayList<>() ;
+        if(papers==null){
+            papers =new ArrayList<>() ;
         }
-        this.papers.add(0,new Ti_paper());
-
+        papers.add(0,new Ti_paper());
+        this.papers =papers ;
         notifyDataSetChanged();
     }
 
@@ -69,17 +69,17 @@ public class PaperAdapter extends RecyclerView.Adapter {
               if(getItemViewType(position)==HEADER_TYPE){
                    HeaderHolder headerHolder = (HeaderHolder) holder;
               }else{
-                MyHolder myHolder = (MyHolder) holder;
-                myHolder.paperName.setText(paper.getName());
+                  MyHolder myHolder = (MyHolder) holder;
+                  myHolder.paperName.setText(paper.getName());
+                  myHolder.nums.setText("题目个数："+paper.getTotal_count());
+                  myHolder.time.setText("考试时间:"+paper.getAnswer_time());
               }
     }
 
     @Override
     public int getItemCount() {
-        return papers==null?1:papers.size();
+        return papers.size();
     }
-
-
     @Override
     public int getItemViewType(int position) {
 
@@ -107,14 +107,38 @@ public class PaperAdapter extends RecyclerView.Adapter {
 
     private class MyHolder extends RecyclerView.ViewHolder{
         private TextView paperName ;
+        private TextView edit ;
+        private TextView delete ;
+        private TextView time ;
+        private TextView  nums ;
 
         public MyHolder(View itemView) {
             super(itemView);
+
+            edit = (TextView) itemView.findViewById(R.id.eidt);
+            delete = (TextView) itemView.findViewById(R.id.delete);
+            time = (TextView) itemView.findViewById(R.id.time);
+            nums = (TextView) itemView.findViewById(R.id.nums);
+
             paperName = (TextView) itemView.findViewById(R.id.paper_name);
+
+            edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    baseLoadMoreFragment.onItemClick(getAdapterPosition(), Config.EDIT_TYPE);
+                }
+            });
+
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    baseLoadMoreFragment.onItemClick(getAdapterPosition(),Config.DELETE_TYPE);
+                }
+            });
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    baseLoadMoreFragment.onItemClick(getAdapterPosition()-1);
+                    baseLoadMoreFragment.onItemClick(getAdapterPosition());
                 }
             });
         }

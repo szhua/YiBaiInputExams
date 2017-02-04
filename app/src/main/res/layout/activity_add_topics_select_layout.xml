@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.AddTopicsSelectActivity">
+
+
+   <ScrollView
+       android:paddingTop="20dp"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <TextView
+               android:id="@+id/single_bt"
+               style="@style/NornmalButton"
+               android:layout_margin="16dp"
+               android:text="添加单选题"
+               android:clickable="true"
+               android:layout_width="match_parent"
+               android:layout_height="60dp"/>
+
+           <TextView
+               android:id="@+id/mutil_bt"
+               style="@style/NornmalButton"
+               android:layout_margin="16dp"
+               android:text="多选题"
+               android:clickable="true"
+               android:layout_width="match_parent"
+               android:layout_height="60dp"/>
+
+           <TextView
+               android:id="@+id/judge_bt"
+               style="@style/NornmalButton"
+               android:layout_margin="16dp"
+               android:text="添加判断题"
+               android:clickable="true"
+               android:layout_width="match_parent"
+               android:layout_height="60dp"/>
+
+
+
+       </LinearLayout>
+
+
+   </ScrollView>
+
+
+
+
+
+
+
+
+</LinearLayout>

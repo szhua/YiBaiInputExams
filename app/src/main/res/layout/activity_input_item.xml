@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.yibaieducation.input.ui.InputItemActivity">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/insert"
+            style="@style/NornmalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="插入数据"
+            />
+
+        <TextView
+            android:id="@+id/qury"
+            android:layout_marginTop="16dp"
+            style="@style/NornmalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查询数据"
+            android:layout_marginBottom="16dp"
+            />
+
+
+        <TextView
+            android:id="@+id/types"
+            android:text="及开发及上的看法就扣水电费"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="account"
+            android:id="@+id/account"
+            />
+
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+</LinearLayout>

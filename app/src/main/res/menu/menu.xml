@@ -5,6 +5,18 @@
     <item android:id="@+id/setting"
           app:showAsAction="never"
           android:checkable="true"
-          android:checked="true"  android:actionLayout="@layout/item_menu"  android:title="设置初始数据" android:icon="@mipmap/ic_launcher"></item>
-    <item android:id="@+id/setting1" android:title="设置初始数据" android:icon="@mipmap/ic_launcher"></item>
+          android:checked="true"
+          android:actionLayout="@layout/item_menu"
+          android:title="设置初始数据"
+          android:icon="@mipmap/ic_launcher">
+
+    </item>
+    <item
+          app:showAsAction="never"
+          android:id="@+id/setting1"
+          android:title="设置初始数据"
+          android:icon="@mipmap/ic_launcher">
+
+    </item>
+    <item android:id="@+id/setting2" android:title="选择科目"></item>
 </menu>

@@ -36,13 +36,12 @@ public class HomeListFragment extends BaseLoadMoreFragment implements SqlResult 
         datas =new ArrayList<>();
         subjectAdapter =new SubjectAdapter(getContext());
         subjectAdapter.setDatas(datas);
-
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        subjectDao =new GetSubjectDao(getDaoSession(),this) ;
+        subjectDao =new GetSubjectDao(getDaoSession(),this);
         subjectDao.request();
         showSwipeProgress();
     }
@@ -79,7 +78,7 @@ public class HomeListFragment extends BaseLoadMoreFragment implements SqlResult 
             if(Config.ERRO_CODE_ERRO==erroCode){
                 ToastUtil.showToast(getBaseApplication(),msg);
             }else{
-                ToastUtil.showToast(getBaseApplication(),subjectDao.getSubjects().toString());
+                //ToastUtil.showToast(getBaseApplication(),subjectDao.getSubjects().toString());
                 datas =subjectDao.getSubjects();
                 subjectAdapter.setDatas(datas);
             }

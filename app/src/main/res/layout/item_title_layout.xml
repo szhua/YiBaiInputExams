@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:elevation="10dp"
+        app:cardCornerRadius="6dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="6dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+              <RelativeLayout
+                  android:gravity="center_vertical"
+                  android:layout_marginBottom="10dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+                  <ImageView
+                      android:id="@+id/type_icon"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:src="@drawable/single_type"
+                      android:layout_centerVertical="true"
+                      />
+                  <TextView
+                      android:text="单选"
+                      android:layout_toRightOf="@id/type_icon"
+                      android:layout_centerVertical="true"
+                      android:id="@+id/type_name"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="14sp"
+                      android:textColor="@color/text_color_normal"
+                      android:layout_marginLeft="6dp"
+                      />
+
+                  <LinearLayout
+                      android:layout_alignParentRight="true"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content">
+                      <TextView
+                          android:id="@+id/delete"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                           android:drawableLeft="@drawable/delete"
+                          android:text="删除"
+                          android:paddingRight="16dp"
+                          android:gravity="center_vertical"
+                          android:paddingLeft="16dp"
+                          />
+                      <TextView
+                          android:id="@+id/eidt"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:paddingRight="16dp"
+                          android:paddingLeft="16dp"
+                          android:drawableLeft="@drawable/edit"
+                          android:text="编辑"
+                          android:gravity="center_vertical"
+                          />
+
+                  </LinearLayout>
+
+              </RelativeLayout>
+
+                <TextView
+                    android:background="@drawable/square_shape"
+                    android:padding="6dp"
+                    android:id="@+id/title_name"
+                    android:layout_centerInParent="true"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_color_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/select_container"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:id="@+id/b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:id="@+id/c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:id="@+id/d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/right_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/fbutton_color_turquoise"
+                    />
+                <TextView
+                    android:id="@+id/score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/fbutton_color_peter_river"
+                    />
+                <TextView
+                    android:id="@+id/des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+</LinearLayout>

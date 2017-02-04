@@ -41,11 +41,16 @@ public abstract class BaseLoadMoreFragment extends BaseFragment implements Swipe
 
      public  abstract  void  onItemClick(int postion);
 
+
+     public void onItemClick(int postion ,int type){
+
+     }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View rootLoadMoreView =LayoutInflater.from(getContext()).inflate(R.layout.layout_base_loadmore,container,false) ;
+        View rootLoadMoreView =inflater.inflate(R.layout.layout_base_loadmore,container,false) ;
         recyclerView = (RecyclerView) rootLoadMoreView.findViewById(R.id.recycler_view);
         swipeRefreshLayout = (SwipeRefreshLayout) rootLoadMoreView.findViewById(R.id.swiperefresh);
 
@@ -103,7 +108,6 @@ public abstract class BaseLoadMoreFragment extends BaseFragment implements Swipe
 
     protected  void showSwipeProgress(){
         if(swipeRefreshLayout!=null){
-            Logger.d("refreshing");
             swipeRefreshLayout.setRefreshing(true);
         }
     }

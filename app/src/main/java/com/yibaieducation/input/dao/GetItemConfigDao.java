@@ -28,6 +28,4 @@ public class GetItemConfigDao extends BaseGetPageDataDao<Ti_item_config,Ti_item_
 //        getAllData(Config.REQUEST_CODE_1);
 //    }
 
-
-
 }
